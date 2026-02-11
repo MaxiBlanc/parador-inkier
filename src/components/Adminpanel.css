@@ -1,0 +1,296 @@
+/* AdminPanel.css - VERSIÓN CORREGIDA 3 COLUMNAS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root {
+  --turquesa-logo: #398F82;
+  --verde-fondo: #A2DED0;
+  --blanco: #FFFFFF;
+  --verde-oscuro-texto: #2C5F55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--verde-fondo);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Fuerza a que todo empiece desde arriba */
+  padding-top: 10px;
+  min-height: 100vh;
+}
+
+.admin-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGO */
+.admin-header-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.header-logo-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--blanco);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* FORMULARIO CATEGORÍA */
+.category-form {
+  background-color: var(--turquesa-logo);
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border: 2px solid var(--blanco);
+  width: 100%;
+}
+
+.admin-input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+/* CARDS DE CATEGORÍAS */
+.admin-cat-card {
+  background-color: var(--blanco);
+  margin-bottom: 25px;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.admin-cat-header {
+  background-color: var(--turquesa-logo);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cat-title-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-actions button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+/* ESTRUCTURA DE LA FILA DE PRODUCTO (EL CAMBIO CLAVE) */
+.admin-prod-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 100px; /* Texto | Imagen | Botones */
+  grid-template-rows: auto auto; /* Nombre/Precio | Descripción */
+  gap: 10px 20px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+/* Columna 1: Info (Nombre y Precio arriba, Desc abajo) */
+.prod-info-left {
+  grid-column: 1;
+  grid-row: 1 / span 2; /* Ocupa las dos filas de la izquierda */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.name-price-group {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+
+.p-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--turquesa-logo);
+  text-transform: uppercase;
+}
+
+.p-price {
+  font-weight: 700;
+  color: var(--verde-oscuro-texto);
+  font-size: 1rem;
+}
+
+.p-desc {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Columna 2: Imagen (Al centro y ocupando el alto) */
+.prod-img-center {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+/* Columna 3: Botones (A la derecha) */
+.prod-btns-right {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* BOTONES */
+.btn-primary {
+  background-color: var(--turquesa-logo);
+  color: white;
+  border: 1px solid var(--blanco);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--blanco);
+  color: var(--turquesa-logo);
+  border: 1px solid var(--turquesa-logo);
+}
+
+.btn-add {
+  background-color: var(--turquesa-logo);
+  color: var(--blanco);
+  border: 1px solid var(--blanco);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: var(--blanco);
+  color: var(--turquesa-logo);
+  border: 1px solid var(--blanco);
+}
+
+.btn-edit {
+  background: var(--turquesa-logo);
+  border: 1px solid var(--blanco);
+  color: var(--blanco);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-edit:hover {
+  background: var(--blanco);
+  border: 1px solid var(--verde-fondo);
+  color: var(--turquesa-logo);
+}
+.btn-edit1 {
+  background: white;
+  border: 1px solid var(--turquesa-logo);
+  color: var(--turquesa-logo);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-edit1:hover {
+  background-color: var(--turquesa-logo);
+  color: var(--blanco);
+  border: 1px solid var(--blanco);
+}
+
+.btn-delete {
+  background-color: #ad1d1d;
+  color: #f8d7da;
+  border: 1px solid var(--blanco);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-delete:hover {
+  background-color: #f8d7da;
+  color:  #ad1d1d;
+  border:  1px solid var(--blanco);
+}
+.btn-delete1 {
+  background-color: #f8d7da;
+  color:  #ad1d1d;
+  border:  1px #ad1d1d solid;
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-delete1:hover {
+  background-color: #ad1d1d;
+  color: #f8d7da;
+  border: 1px solid var(--blanco);
+}
+
+/* MODAL */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(44, 95, 85, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  backdrop-filter: blur(4px);
+}
+
+.admin-modal-form {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 380px;
+}
