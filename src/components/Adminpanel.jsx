@@ -5,7 +5,7 @@ import {
   doc, deleteDoc, updateDoc, writeBatch, getDocs, where 
 } from 'firebase/firestore';
 import Swal from 'sweetalert2';
-import './AdminPanel.css';
+import './Adminpanel.css';
 
 const AdminPanel = () => {
     const [categorias, setCategorias] = useState([]);
