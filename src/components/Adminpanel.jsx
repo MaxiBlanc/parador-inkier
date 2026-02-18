@@ -7,7 +7,7 @@ import {
 import Swal from 'sweetalert2';
 import '../components/Adminpanel.css';
 
-const AdminPanel = () => {
+const Adminpanel = () => {
     const [categorias, setCategorias] = useState([]);
     const [productos, setProductos] = useState([]);
     const [categoriaActiva, setCategoriaActiva] = useState(null);
@@ -281,4 +281,4 @@ if (!autorizado) {
     );
 };
 
-export default AdminPanel;
+export default Adminpanel;
