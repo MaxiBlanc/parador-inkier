@@ -1,9 +1,9 @@
-import AdminPanel from './Components/AdminPanel';
+import Adminpanel from './components/Adminpanel';
 
 function App() {
   return (
     <div>
-      <AdminPanel />
+      <Adminpanel />
     </div>
   )
 }
