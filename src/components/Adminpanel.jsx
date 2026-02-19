@@ -251,7 +251,7 @@ if (!autorizado) {
                             <button className="btn-delete" onClick={() => eliminarCategoria(catActual.id, catActual.nombre)}>✕</button>
                         </div>
                         <button className="btn-add" onClick={() => abrirModalProducto(null, catActual.nombre)}>
-                            + AGREGAR PLATO
+                            +
                         </button>
                     </div>
 
