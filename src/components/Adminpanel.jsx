@@ -257,21 +257,27 @@ if (!autorizado) {
 
                     <div className="admin-prod-list">
                         {productos.filter(p => p.categoria === catActual.nombre).map(p => (
-                            <div key={p.id} className="admin-prod-row">
-                                <div className="prod-info-left">
-                                    <span className="p-name">{p.nombre}</span>
-                                    <span className="p-price">${p.precio}</span>
-                                    <p className="p-desc">{p.descripcion || "Sin descripción."}</p>
-                                </div>
-                                <div className="prod-img-center">
-                                    <img src={p.imagen || 'https://via.placeholder.com/150'} alt={p.nombre} className="p-img" />
-                                </div>
-                                <div className="prod-btns-right">
-                                    <button className="btn-edit1" onClick={() => abrirModalProducto(p)}>✎</button>
-                                    <button className="btn-delete1" onClick={() => eliminarProducto(p.id)}>✕</button>
-                                </div>
-                            </div>
-                        ))}
+    <div key={p.id} className="admin-prod-row">
+        {/* CORREGIDO: Usamos el nombre que tenés en el CSS */}
+        <div className="product-info-col">
+            <span className="p-name">{p.nombre}</span>
+            <span className="p-price">${p.precio}</span>
+            <p className="p-desc">{p.descripcion || "Sin descripción."}</p>
+        </div>
+
+        {/* CORREGIDO: Sacamos el div 'prod-img-center' y dejamos la imagen sola */}
+        <img 
+            src={p.imagen || 'https://via.placeholder.com/150'} 
+            alt={p.nombre} 
+            className="p-img" 
+        />
+
+        <div className="prod-btns-right">
+            <button className="btn-edit1" onClick={() => abrirModalProducto(p)}>✎</button>
+            <button className="btn-delete1" onClick={() => eliminarProducto(p.id)}>✕</button>
+        </div>
+    </div>
+))}
                     </div>
                 </div>
             ) : (
