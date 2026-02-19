@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 :root {
+  color-scheme: light;
   --turquesa-logo: #398F82;
   --verde-fondo: #A2DED0;
   --blanco: #FFFFFF;
@@ -15,6 +16,8 @@
 }
 
 body, html {
+  background-color: var(--verde-fondo) !important;
+  color: var(--verde-oscuro-texto) !important;
   width: 100%;
   overflow-x: hidden;
   background-color: var(--verde-fondo);
